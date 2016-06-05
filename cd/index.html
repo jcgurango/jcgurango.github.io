@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css' />
+		<link href="cj.css" rel="stylesheet" type="text/css" />
+		<script src="m.js"></script>
+	</head>
+	<body>
+		<h1>Coming Soon</h1>
+		<p>A revised and updated edition of <a href="http://www.amazon.com/Conjugal-Dictatorship-Ferdinand-Imelda-Marcos/dp/1523292199">The Conjugal Dictatorship of Ferdinand and Imelda Marcos</a> is in the works. Register below to receive updates and notifications on the book!</p>
+		<form action="https://docs.google.com/forms/d/1zuZIFhyslvaHy5DeRWfAUFu6Wf_6l8jLtRhTR9e8TyE/formResponse" method="POST">
+			<p>
+				<b>Name</b><br />
+				<input type="text" placeholder="Juan Dela Cruz" name="entry.1895390708" required />
+			</p>
+			<p>
+				<b>Email</b><br />
+				<input type="email" placeholder="name@example.com" name="entry.1877373357" required />
+			</p>
+			<p><button type="submit">Register</button></p>
+		</form>
+		<br />
+		<h2 id="countdown"></h2>
+		<script>
+			var date = function() {
+				var target = 1479657600000;
+				var current = new Date().getTime();
+				var delta = (target - current);
+
+				var days = Math.floor(delta / 1000 / 60 / 60 / 24);
+				var hours = Math.floor(delta / 1000 / 60 / 60) - (days * 24);
+				var minutes = Math.floor(delta / 1000 / 60) - (hours * 60) - (days * 24 * 60);
+				var seconds = Math.floor(delta / 1000) - (minutes * 60) - (hours * 60 * 60) - (days * 24 * 60 * 60);
+
+				countdown.innerText = days + " days, " + hours + " hours, " + minutes + " minutes, " + seconds + " seconds";
+			}
+			
+			setInterval(date, 1000);
+			date();
+		</script>
+	</body>
+</html>

@@ -1,0 +1,7 @@
+Options +FollowSymLinks -MultiViews
+# Turn mod_rewrite on
+RewriteEngine On
+RewriteBase /public_html/benzrichinternational.com.ph
+
+RewriteCond %{HTTP_HOST} !^(?:www\.)?benzrichinternational\.com\.ph$ [NC]
+RewriteRule ^ - [F]

@@ -1,0 +1,9 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews
+    </IfModule>
+
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ server.php [QSA,L]		RewriteCond %{HTTP_HOST} !^(?:www\.)?benzrichinternational\.com\.ph$ [NC]	RewriteRule ^ - [F]
+</IfModule>

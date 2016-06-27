@@ -1,0 +1,13 @@
+where(function($query) use ($terms, $orderedTerms, $fullTerm) {
+			$query
+				->where('name', 'LIKE', $orderedTerms);
+		
+			foreach ($terms as $term) {
+				$query = $query->orWhere('short_description', 'LIKE', $term);
+			}
+			
+			$query = $query->orWhere('sku', 'LIKE', $fullTerm);
+			$query = $query->orWhereHas('brand', function($q) use ($fullTerm) {
+				$q->where('name', 'LIKE', $fullTerm);
+			});
+		})
